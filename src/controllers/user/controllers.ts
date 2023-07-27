@@ -12,9 +12,9 @@ export async function verifyToken(token: string) {
 
 export async function checkUser(firebaseUser: UserRecord) {
     const user = await UserModel.findOneAndUpdate({
-        auth_id: firebaseUser.uid
+        firebaseUid: firebaseUser.uid
     }, {
-        auth_id: firebaseUser.uid,
+        firebaseUid: firebaseUser.uid,
         email: firebaseUser.email,
         emailVerified: firebaseUser.emailVerified,
         displayName: firebaseUser.displayName,

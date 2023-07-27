@@ -1,5 +1,8 @@
+import { Types } from "mongoose";
+
 export interface IUser {
-    auth_id: string;
+    _id: Types.ObjectId;
+    firebaseUid: string;
     email: string;
     emailVerified: boolean;
     displayName: string;

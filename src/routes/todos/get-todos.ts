@@ -16,8 +16,8 @@ type GetTodosQury = {
 
 async function getTodosApi(req: Request<EmptyObject, GetTodosQury>, res: Response) {
     const { id } = req.query
-    const { auth_id } = res.locals.user || {}
-    const todos = await getTodos({ auth_id, id })
+    const { _id: user_id } = res.locals.user || {}
+    const todos = await getTodos({ user_id, id })
     res.send(todos)
 }
 

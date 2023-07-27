@@ -2,7 +2,7 @@ import mongoose, { Schema } from "mongoose";
 import { IUser } from "../types";
 
 const UserSchema = new Schema<IUser>({
-    auth_id: { type: String, required: true, unique: true },
+    firebaseUid: { type: String, required: true, unique: true },
     email: { type: String, required: true, unique: true },
     emailVerified: { type: Boolean, default: false },
     displayName: { type: String, required: true },

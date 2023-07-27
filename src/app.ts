@@ -8,8 +8,8 @@ import apiErrorHandler from './middlewares/apiErrorHandler';
 const app = express()
     .use(express.json())
     .use(cors())
+    .use(routes)
     .use(apiErrorHandler)
-    .use(routes);
 
 
 app.listen(PORT, () => {

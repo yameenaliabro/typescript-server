@@ -18,8 +18,8 @@ type CerateTodosBody = {
 
 async function createTodoApi(req: Request<CerateTodosBody>, res: Response) {
     const { title, description } = req.body
-    const { auth_id } = res.locals.user || {}
-    const todo = await createTodo({ title, description, auth_id: auth_id! })
+    const { _id :user_id } = res.locals.user || {}
+    const todo = await createTodo({ title, description, user_id: user_id! })
     res.send(todo)
 }
 

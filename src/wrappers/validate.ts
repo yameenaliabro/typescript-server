@@ -44,7 +44,7 @@ const validate = (schemas: RequestSchemas = {}): RequestHandlerWrapper => (handl
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (res as any).send = (responseBody: any) => {
       res.send = originSend;
-      res.send({ success: true, data: responseBody });
+      res.send(responseBody);
     };
 
     try {
