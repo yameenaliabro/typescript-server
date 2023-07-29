@@ -7,4 +7,4 @@ export interface IUser {
     emailVerified: boolean;
     displayName: string;
     photoUrl: string | null;
-}
+}       

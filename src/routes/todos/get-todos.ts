@@ -1,7 +1,7 @@
 import Joi from 'joi';
 import { EmptyObject, Request, Response } from '../../helpers';
 import { wrap } from '../../wrappers';
-import { getTodos } from '../../controllers';
+import { getTodo } from '../../controllers';
 
 const getTodosSchemas = {
     reqQuery: Joi.object({
@@ -10,14 +10,14 @@ const getTodosSchemas = {
     reqBody: Joi.object().length(0),
 };
 
-type GetTodosQury = {
+type GetTodosQuery = {
     id?: string
 }
 
-async function getTodosApi(req: Request<EmptyObject, GetTodosQury>, res: Response) {
+async function getTodosApi(req: Request<EmptyObject, GetTodosQuery>, res: Response) {
     const { id } = req.query
     const { _id: user_id } = res.locals.user || {}
-    const todos = await getTodos({ user_id, id })
+    const todos = await getTodo({ user_id, id })
     res.send(todos)
 }
 

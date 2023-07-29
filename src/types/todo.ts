@@ -8,4 +8,4 @@ export interface ITodo {
     completed: boolean;
     createdAt: string;
     updatedAt: string;
-}
+}   

@@ -3,7 +3,7 @@ import { omitUndefined } from "../../helpers/objectUtils";
 import { TodoModel } from "../../models"
 import { CreateTodoType, DeleteTodoType, GetTodoProps, UpdateTodoType } from "./dto"
 
-export const getTodos = async (props: GetTodoProps) => {
+export const getTodo = async (props: GetTodoProps) => {
     const { user_id, id } = props;
     const todos = await TodoModel.find(omitUndefined({ user: user_id, _id: id }))
     if (id) {

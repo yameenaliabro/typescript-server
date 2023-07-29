@@ -12,7 +12,7 @@ export type CreateTodoType = {
 }
 
 export type UpdateTodoType = {
-    _id: string
+    _id: string | undefined,
     title?: string;
     description?: string;
     completed?: boolean;

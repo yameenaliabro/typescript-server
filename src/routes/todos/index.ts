@@ -10,5 +10,4 @@ const todoRoutes = express()
     .delete("/", deleteTodo)
     .patch("/", updateTodo)
 
-
 export default todoRoutes
